@@ -1,0 +1,49 @@
+.container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+   
+}
+.fondo{
+  background: rgb(250,164,255);
+  background: linear-gradient(77deg, rgba(250,164,255,1) 0%, rgba(159,61,226,1) 100%);
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+h2{
+  padding: 0.8rem;
+  color:black;
+  font-size: 30px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}
+form{
+  
+    width: 30rem;
+    padding: 2rem;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .btn-container{
+    text-align: center;
+    display: flex; 
+    justify-content: space-between;
+  }  
+.border{
+  border-radius: 20px;
+  border-color: darkviolet;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredoka+One&family=Lexend+Deca:wght@500&family=Quicksand&display=swap');
+mat-label{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+}

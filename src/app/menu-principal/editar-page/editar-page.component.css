@@ -1,0 +1,23 @@
+.example-full-width {
+    width: 100%; 
+  }
+
+mat-form-field{
+    width: 100%;
+}  
+.container{
+ 
+    margin-top: 5rem;
+}
+.border{
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+body{
+    background: rgb(250,164,255);
+    background: linear-gradient(77deg, rgba(250,164,255,1) 0%, rgba(159,61,226,1) 100%);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredoka+One&family=Lexend+Deca:wght@500&family=Quicksand&display=swap');

@@ -1,0 +1,80 @@
+<h1 class="text-center">Lista de Usuarios</h1>
+<section class="fondo">
+<section class="container-sm">
+
+  <section class="m-5">
+  <!-- BUTTON ADD USER-->
+  <section class="mb-3 d-block">
+    <input type="submit" class="btn btn-primary" value="Add User" (click)="addUser()">
+  </section>
+  <section>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table bg-light">
+      <!-- Position Column -->
+      <ng-container matColumnDef="Id">
+        <th class="text-center" mat-header-cell *matHeaderCellDef>Id</th>
+        <td  class="text-center" mat-cell *matCellDef="let element">{{element.Id}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Nombre">
+        <th class="text-center" mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td class="text-center" mat-cell *matCellDef="let element">{{element.Nombre}}</td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Correo">
+        <th class="text-center" mat-header-cell *matHeaderCellDef>Correo</th>
+        <td class="text-center" mat-cell *matCellDef="let element">{{element.Correo}}</td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="Role">
+        <th class="text-center" mat-header-cell *matHeaderCellDef>Role</th>
+        <td class="text-center" mat-cell *matCellDef="let element">{{element.Role}}</td>
+      </ng-container>
+      
+      <!--BOTONES -->
+      <ng-container matColumnDef="Editar">
+        <th class="text-center" mat-header-cell *matHeaderCellDef mat-sort-header>Editar</th>
+        <td mat-cell *matCellDef="let element">
+         <button class="btn btn-warning" [routerLink]="['/actualizar', element.Id]"  mat-icon-button>Editar</button>
+          
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="Eliminar">
+        <th class="text-center" mat-header-cell *matHeaderCellDef mat-sort-header>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <button class="btn btn-danger" (click)="(Eliminar(element.Id))" mat-icon-button>Eliminar</button>
+        </td>
+      </ng-container>
+     
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+          mat-row
+          (click)="clickedRows.add(row)"
+          [class.demo-row-is-clicked]="clickedRows.has(row)"
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+  </section>
+</section>
+  
+<section class="m-5">
+  <div class="">
+    <h3>
+      Click Log
+    </h3>
+  </div>
+  
+  <div *ngIf="!clickedRows.size" class="m5">
+    Clicked rows will be logged here
+  </div>
+  
+  <ul class="">
+    <li *ngFor="let clickedRow of clickedRows">
+      Clicked on {{clickedRow.Nombre}}
+    </li>
+  </ul>
+</section>

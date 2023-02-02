@@ -1,0 +1,95 @@
+<h2 class="text-center">Registro de Usuarios</h2>
+  <section class="fondo">
+<section class="container">
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="border border-2 bg-light">
+        <!-- Title -->
+        <section class="container Correo">
+               <mat-form-field class="example-full-width">
+                  <mat-label>Title</mat-label>
+                  <input matInput type="text" id="title" formControlName="Title">
+                   <!--validacion aqui-->
+                   <section *ngIf="Title?.invalid && (Title?.dirty || Title?.touched)">
+                    <section *ngIf="Title?.errors?.['required']" class="alert alert-danger">
+                    El nombre es obligatorio
+                    </section>
+                    </section>
+                    <mat-icon matSuffix>close</mat-icon>
+                </mat-form-field>
+        </section>
+        <!-- NOMBRE -->
+        <section class="container nombre">
+              <mat-form-field class="example-full-width">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput type="text"  id="Nombre"  name="Nombre" formControlName="Nombre">       
+                  <section *ngIf="Nombre?.invalid && (Nombre?.dirty || Nombre?.touched)">
+                    <section *ngIf="Nombre?.errors?.['required']" class="alert alert-danger">
+                    El Nombre es obligatorio
+                    </section>
+                    </section>
+                    <mat-icon matSuffix>close</mat-icon>
+              </mat-form-field>
+        </section>
+        <!-- Apellido -->
+        <section class="container Apellido">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Apellido</mat-label>
+                  <input matInput type="text"  id="Apellido"  formControlName="Apellido">
+                  <section *ngIf="Apellido?.invalid && (Apellido?.dirty || Apellido?.touched)">
+                    <section *ngIf="Apellido?.errors?.['required']" class="alert alert-danger">
+                    El Apellido es obligatorio
+                    </section>
+                    </section>
+                    <mat-icon matSuffix>close</mat-icon>
+                  </mat-form-field>
+        </section>
+            <!-- CORREO -->
+            <section class="container Correo">
+              <mat-form-field class="example-full-width">
+                  <mat-label>Correo</mat-label>
+                  <input matInput type="email"  id="Correo"  formControlName="Correo">
+                  <section *ngIf="Correo?.invalid && (Correo?.dirty || Correo?.touched)">
+                    <section *ngIf="Correo?.errors?.['required']" class="alert alert-warning">
+                    El Correo es obligatorio
+                    </section>
+                    </section>
+                    <mat-icon matSuffix>close</mat-icon>   
+              </mat-form-field>      
+            </section>
+            <!-- Role -->
+            <section class="container Correo">  
+               <mat-form-field class="example-full-width">
+                      <mat-label>Role</mat-label>
+                      <input matInput type="text"  id="Role"  formControlName="Role">
+                      <section *ngIf="Role?.invalid && (Role?.dirty || Role?.touched)">
+                        <section *ngIf="Role?.errors?.['required']" class="alert alert-danger">
+                        El Role es obligatorio
+                        </section>
+                        </section>
+                        <mat-icon matSuffix>close</mat-icon>
+                </mat-form-field>     
+            </section> 
+             <!-- CONTRASEÑA -->
+             <section class="container Contraseña">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Contraseña</mat-label>
+                      <input matInput type="password"  id="Password"  formControlName="Password">
+                      <section *ngIf="Password?.invalid && (Password?.dirty || Password?.touched)">
+                        <section *ngIf="Password?.errors?.['required']" class="alert alert-warning">
+                        El Contraseña es obligatorio
+                        </section>
+                        </section>
+                    </mat-form-field> 
+              </section>
+
+            <!--BOTONES-->
+        <section class="d-flex justify-content-center">
+          <section>
+            <input type="submit" class="btn btn-primary m-3"  value="Save">
+          </section> 
+          <section>
+            <input type="button" class="btn btn-outline-primary m-3" (click)="Cancel()" value="Cancel">
+          </section>
+          </section>
+    </form>
+</section>
+</section>
